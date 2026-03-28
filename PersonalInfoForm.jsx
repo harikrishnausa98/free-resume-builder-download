@@ -22,7 +22,7 @@ export default function PersonalInfoForm() {
             name="fullName"
             value={personalInfo.fullName}
             onChange={handleChange}
-            placeholder="e.g. Jane Doe"
+            placeholder="e.g. Priyadharshini"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
@@ -34,7 +34,7 @@ export default function PersonalInfoForm() {
             name="jobTitle"
             value={personalInfo.jobTitle}
             onChange={handleChange}
-            placeholder="e.g. Senior Frontend Developer"
+            placeholder="e.g. Senior IICS Developer"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
@@ -46,7 +46,7 @@ export default function PersonalInfoForm() {
             name="email"
             value={personalInfo.email}
             onChange={handleChange}
-            placeholder="jane@example.com"
+            placeholder="priyadharshini@example.com"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
@@ -58,7 +58,7 @@ export default function PersonalInfoForm() {
             name="phone"
             value={personalInfo.phone}
             onChange={handleChange}
-            placeholder="+1 (555) 123-4567"
+            placeholder="+91 98765 43210"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
@@ -70,7 +70,7 @@ export default function PersonalInfoForm() {
             name="location"
             value={personalInfo.location}
             onChange={handleChange}
-            placeholder="e.g. New York, NY"
+            placeholder="e.g. Coimbatore, India"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
@@ -82,7 +82,7 @@ export default function PersonalInfoForm() {
             name="portfolioUrl"
             value={personalInfo.portfolioUrl}
             onChange={handleChange}
-            placeholder="linkedin.com/in/janedoe"
+            placeholder="linkedin.com/in/priyadharshini"
             className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-md focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           />
         </div>
