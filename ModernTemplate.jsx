@@ -111,6 +111,22 @@ export default function ModernTemplate({ data }) {
           </div>
         </section>
       )}
+
+      {data.skills && data.skills.length > 0 && (
+        <section className="mb-6">
+          <h2 className="text-lg font-bold text-gray-900 border-b border-gray-300 pb-1 mb-4 uppercase tracking-wide">
+            Skills
+          </h2>
+          
+          <div className="flex flex-wrap gap-2">
+            {data.skills.map((skill) => (
+              <span key={skill.id} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm font-medium border border-gray-200">
+                {skill.name}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

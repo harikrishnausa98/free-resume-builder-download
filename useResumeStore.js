@@ -84,6 +84,34 @@ export const useResumeStore = create(
           education: state.education.filter((edu) => edu.id !== id)
         })),
 
+      addSkill: () =>
+        set((state) => ({
+          skills: [
+            ...state.skills,
+            { id: crypto.randomUUID(), name: '' }
+          ]
+        })),
+
+      updateSkill: (id, data) =>
+        set((state) => ({
+          skills: state.skills.map((skill) =>
+            skill.id === id ? { ...skill, ...data } : skill
+          )
+        })),
+
+      removeSkill: (id) =>
+        set((state) => ({
+          skills: state.skills.filter((skill) => skill.id !== id)
+        })),
+
+      reorderSkills: (startIndex, endIndex) =>
+        set((state) => {
+          const result = Array.from(state.skills);
+          const [removed] = result.splice(startIndex, 1);
+          result.splice(endIndex, 0, removed);
+          return { skills: result };
+        }),
+
       updateSettings: (data) =>
         set((state) => ({
           settings: { ...state.settings, ...data }
