@@ -1,16 +1,21 @@
 import React from 'react';
 
 export default function ModernTemplate({ data }) {
-  const { personalInfo } = data;
+  const { personalInfo, settings } = data;
+  const themeColor = settings?.themeColor || '#3b82f6';
+  const fontFamily = settings?.fontFamily || 'Inter';
 
   return (
-    <div className="w-full h-full p-10 font-sans text-gray-800">
+    <div className="w-full h-full p-10 text-gray-800" style={{ fontFamily: fontFamily }}>
       
-      <header className="border-b-2 border-blue-600 pb-6 mb-6">
+      <header className="border-b-2 pb-6 mb-6" style={{ borderColor: themeColor }}>
         <h1 className="text-4xl font-bold uppercase tracking-wider text-gray-900">
           {personalInfo.fullName || 'Your Name'}
         </h1>
-        <p className="text-xl text-blue-600 font-medium mt-1">
+        <p 
+          className="text-xl font-medium mt-1"
+          style={{ color: themeColor }}
+        >
           {personalInfo.jobTitle || 'Your Job Title'}
         </p>
         
@@ -58,7 +63,10 @@ export default function ModernTemplate({ data }) {
                       {job.city && <span className="font-normal text-gray-500">, {job.city}</span>}
                     </h3>
                   </div>
-                  <div className="text-sm text-blue-600 font-medium whitespace-nowrap ml-4">
+                  <div 
+                    className="text-sm font-medium whitespace-nowrap ml-4"
+                    style={{ color: themeColor }}
+                  >
                     {job.startDate} {job.startDate && job.endDate && '—'} {job.endDate}
                   </div>
                 </div>
@@ -97,7 +105,10 @@ export default function ModernTemplate({ data }) {
                       {edu.city && <span className="font-normal text-gray-500">, {edu.city}</span>}
                     </h3>
                   </div>
-                  <div className="text-sm text-blue-600 font-medium whitespace-nowrap ml-4">
+                  <div 
+                    className="text-sm font-medium whitespace-nowrap ml-4"
+                    style={{ color: themeColor }}
+                  >
                     {edu.startDate} {edu.startDate && edu.endDate && '—'} {edu.endDate}
                   </div>
                 </div>

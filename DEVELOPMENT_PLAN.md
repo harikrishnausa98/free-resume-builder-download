@@ -45,12 +45,12 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [x] Build the visual Resume Preview component mapping directly to the Zustand store.
   * [x] Integrate client-side PDF generation (e.g., using `html2canvas` and `jsPDF`) to capture the preview DOM and download it.
 
-## Phase 6: Theme & Typography Customization (⏳ Planning)
+## Phase 6: Theme & Typography Customization (✅ Completed)
 * **Focus:** Enable users to personalize the visual appearance of their resume.
 * **Action Items:**
-  * [ ] Build a Settings Panel UI to pick primary accent colors and professional web fonts.
-  * [ ] Bind `themeColor` and `fontFamily` from the Zustand store to the Live Preview.
-  * [ ] Ensure settings are persisted to `localStorage` via Zustand.
+  * [x] Build a Settings Panel UI to pick primary accent colors and professional web fonts.
+  * [x] Bind `themeColor` and `fontFamily` from the Zustand store to the Live Preview.
+  * [x] Ensure settings are persisted to `localStorage` via Zustand.
 
 ## Phase 7: Multiple Resume Templates (⏳ Planning)
 * **Focus:** Introduce distinct structural layouts for the resume.
