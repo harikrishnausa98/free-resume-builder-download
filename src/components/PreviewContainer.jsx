@@ -1,6 +1,6 @@
 import React from 'react';
-import { useResumeStore } from './useResumeStore';
-import ModernTemplate from './ModernTemplate';
+import { useResumeStore } from '../store/useResumeStore';
+import ModernTemplate from './templates/ModernTemplate';
 
 export default function PreviewContainer({ printRef }) {
   const resumeData = useResumeStore((state) => state);

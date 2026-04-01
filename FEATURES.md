@@ -22,3 +22,6 @@ The Free Resume Builder includes the following core features designed to provide
 * Clean, responsive, and accessible interface.
 * Polished form inputs with active focus states, smooth transitions, and intuitive "Add/Remove" interactions for list-based data.
 * Custom scrollbars for a refined look and feel.
+
+## 6. Customization & Templates
+* Choose from 10 distinct professional resume templates (Modern, Classic, Minimalist, Professional, Creative, Elegant, Compact, Bold, Executive, Tech), customize the primary accent color, and select from professional fonts (Inter, Roboto, Merriweather) to personalize the document.

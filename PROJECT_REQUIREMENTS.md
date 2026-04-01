@@ -27,24 +27,24 @@ The following features are currently implemented and considered complete.
 *   Polished form inputs with active focus states, smooth transitions, and intuitive "Add/Remove" interactions for list-based data.
 *   Custom scrollbars for a refined look and feel.
 
-## 2. Upcoming Features (Planning)
+## 2. Upcoming Features (In Progress & Planning)
 
 *(This section will be filled in as we plan the next development phases.)*
 
-### 2.1. Skills Section (Phase 2 - In Progress)
+### 2.1. Skills Section (Phase 2 - Completed)
 *   **Data Entry**: A form section to add, edit, and remove individual skills.
 *   **Live Preview**: Display the list of skills on the resume preview.
 *   **State Management**: Implement the missing Zustand actions (`addSkill`, `removeSkill`, `updateSkill`) to manage the skills array.
 *   **Reordering**: Implement drag-and-drop functionality to allow users to reorder skills.
 
-### 2.2. Theme & Typography Customization (Phase 3 - Planning)
+### 2.2. Theme & Typography Customization (Phase 6 - Completed)
 *   **Settings Panel UI**: A new section in the editor where users can pick a primary accent color (e.g., Blue, Green, Dark Gray) and select from a few clean, professional web fonts (e.g., Inter, Roboto, Merriweather).
 *   **Dynamic Preview Styling**: Binding these settings to the Live Preview so the layout's headers, accents, and typography change in real-time.
 *   **State Management**: Store the user's selected `themeColor` and `fontFamily` in the Zustand store and persist them to `localStorage`.
 
-### 2.3. Multiple Resume Templates (Phase 4 - Planning)
+### 2.3. Multiple Resume Templates (Phase 7 - Completed)
 *   **Template Engine**: Refactor the Live Preview component to act as a wrapper that can conditionally render different layout components based on a `templateId` from the settings store.
-*   **Template Varieties**: Create at least two distinct resume layouts (e.g., a classic single-column and a modern two-column).
+*   **Template Varieties**: Create at least 10 distinct resume layouts (Modern, Classic, Minimalist, Professional, Creative, Elegant, Compact, Bold, Executive, Tech).
 *   **Template Selector UI**: Add a visual selector in the Settings panel for users to switch between available templates instantly.
 
 ### 2.4. Rich Text Editing (Phase 5 - Planning)

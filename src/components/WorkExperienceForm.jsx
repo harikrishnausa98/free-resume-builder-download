@@ -1,5 +1,5 @@
 import React from 'react';
-import { useResumeStore } from './useResumeStore';
+import { useResumeStore } from '../store/useResumeStore';
 
 export default function WorkExperienceForm() {
   const workExperience = useResumeStore((state) => state.workExperience);

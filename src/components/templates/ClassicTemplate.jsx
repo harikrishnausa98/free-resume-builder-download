@@ -105,11 +105,9 @@ export default function ClassicTemplate({ data }) {
             <h2 className="text-lg font-bold text-gray-900 border-b border-gray-300 pb-1 mb-4 uppercase tracking-wide" style={{ color: 'var(--theme-color)' }}>
               Skills
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span key={skill.id} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm font-medium border border-gray-200">{skill.name}</span>
-              ))}
-            </div>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              {skills.map((skill) => skill.name).join(', ')}
+            </p>
           </section>
         )}
       </div>

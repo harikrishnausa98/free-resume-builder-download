@@ -52,14 +52,14 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [x] Bind `themeColor` and `fontFamily` from the Zustand store to the Live Preview.
   * [x] Ensure settings are persisted to `localStorage` via Zustand.
 
-## Phase 7: Multiple Resume Templates (⏳ Planning)
+## Phase 7: Multiple Resume Templates (✅ Completed)
 * **Focus:** Introduce distinct structural layouts for the resume.
 * **Action Items:**
-  * [ ] Refactor the Live Preview component into a Template Engine based on a `templateId`.
-  * [ ] Create at least two distinct resume layouts (e.g., classic single-column, modern two-column).
-  * [ ] Add a visual template selector UI in the Settings panel.
+  * [x] Refactor the Live Preview component into a Template Engine based on a `templateId`.
+  * [x] Create at least two distinct resume layouts (e.g., classic single-column, modern two-column).
+  * [x] Add a visual template selector UI in the Settings panel.
 
-## Phase 8: Rich Text Editing (WYSIWYG) (⏳ Planning)
+## Phase 8: Rich Text Editing (WYSIWYG) (⏳ In Progress)
 * **Focus:** Enhance text descriptions with professional formatting.
 * **Action Items:**
   * [ ] Replace standard `<textarea>` inputs with a client-side Rich Text Editor (e.g., `react-quill` or `tiptap`).

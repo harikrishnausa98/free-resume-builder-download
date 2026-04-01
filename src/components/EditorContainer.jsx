@@ -2,8 +2,8 @@ import React from 'react';
 import PersonalInfoForm from './PersonalInfoForm';
 import WorkExperienceForm from './WorkExperienceForm';
 import EducationForm from './EducationForm';
-import SkillsForm from './src/components/SkillsForm';
-import SettingsPanel from './src/components/SettingsPanel';
+import SkillsForm from './SkillsForm';
+import SettingsPanel from './SettingsPanel';
 
 export default function EditorContainer() {
   return (

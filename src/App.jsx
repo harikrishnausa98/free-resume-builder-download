@@ -1,13 +1,13 @@
 import React from 'react';
 import html2pdf from 'html2pdf.js';
 
-import SplitScreenLayout from './SplitScreenLayout';
-import PersonalInfoForm from './PersonalInfoForm';
-import SettingsPanel from './SettingsPanel';
-import WorkExperienceForm from './WorkExperienceForm';
-import EducationForm from './EducationForm';
-import ResumePreview from './ResumePreview';
-import SkillsForm from './SkillsForm';
+import SplitScreenLayout from './components/SplitScreenLayout';
+import PersonalInfoForm from './components/PersonalInfoForm';
+import SettingsPanel from './components/SettingsPanel';
+import WorkExperienceForm from './components/WorkExperienceForm';
+import EducationForm from './components/EducationForm';
+import ResumePreview from './components/ResumePreview';
+import SkillsForm from './components/SkillsForm';
 
 function App() {
   const resumePreviewRef = React.useRef();
@@ -26,7 +26,6 @@ function App() {
 
   const editorContent = (
     <div className="space-y-6">
-      <SettingsPanel />
       <PersonalInfoForm />
       <WorkExperienceForm />
       <EducationForm />
@@ -34,7 +33,12 @@ function App() {
     </div>
   );
 
-  const previewContent = <ResumePreview ref={resumePreviewRef} />;
+  const previewContent = (
+    <div className="flex flex-col w-full">
+      <SettingsPanel />
+      <ResumePreview ref={resumePreviewRef} />
+    </div>
+  );
 
   return (
     <SplitScreenLayout

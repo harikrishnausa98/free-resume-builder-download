@@ -1,5 +1,5 @@
 import React from 'react';
-import { useResumeStore } from './useResumeStore';
+import { useResumeStore } from '../store/useResumeStore';
 
 export default function PersonalInfoForm() {
   const personalInfo = useResumeStore((state) => state.personalInfo);
