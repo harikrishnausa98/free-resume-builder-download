@@ -27,7 +27,10 @@ export default function ProfessionalTemplate({ data }) {
       {personalInfo.summary && (
         <section className="mb-6">
           <HeaderComponent title="Professional Summary" />
-          <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line">{personalInfo.summary}</p>
+          <div 
+            className="text-sm leading-relaxed text-gray-700 quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
 
@@ -42,7 +45,12 @@ export default function ProfessionalTemplate({ data }) {
                   <span className="text-sm font-bold" style={{ color: themeColor }}>{job.startDate} {job.startDate && job.endDate && '-'} {job.endDate}</span>
                 </div>
                 <p className="text-sm text-gray-600 italic mb-2">{job.employer}{job.city ? `, ${job.city}` : ''}</p>
-                {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">{job.description}</p>}
+                {job.description && (
+                  <div 
+                    className="text-sm leading-relaxed text-gray-700 quill-content"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
+                )}
               </div>
             ))}
           </div>

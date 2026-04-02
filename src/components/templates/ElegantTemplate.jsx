@@ -20,7 +20,10 @@ export default function ElegantTemplate({ data }) {
 
       {personalInfo.summary && (
         <section className="mb-6 text-center">
-          <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line italic max-w-2xl mx-auto">"{personalInfo.summary}"</p>
+          <div 
+            className="text-sm leading-relaxed text-gray-700 italic max-w-2xl mx-auto quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
 
@@ -35,7 +38,12 @@ export default function ElegantTemplate({ data }) {
                   <span className="font-semibold">{job.employer}{job.city ? `, ${job.city}` : ''}</span>
                   <span>{job.startDate} {job.startDate && job.endDate && '-'} {job.endDate}</span>
                 </div>
-                {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">{job.description}</p>}
+                {job.description && (
+                  <div 
+                    className="text-sm leading-relaxed text-gray-700 text-left quill-content"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
+                )}
               </div>
             ))}
           </div>

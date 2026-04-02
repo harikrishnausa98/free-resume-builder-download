@@ -1,5 +1,7 @@
 import React from 'react';
 import { useResumeStore } from '../store/useResumeStore';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function EducationForm() {
   const education = useResumeStore((state) => state.education);
@@ -64,9 +66,8 @@ export default function EducationForm() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                   <input
-                    type="text"
+                    type="month"
                     name="startDate"
-                    placeholder="MM/YYYY"
                     value={edu.startDate}
                     onChange={(e) => handleChange(edu.id, e)}
                     className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -75,13 +76,28 @@ export default function EducationForm() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                   <input
-                    type="text"
+                    type={edu.isCurrent ? "text" : "month"}
                     name="endDate"
-                    placeholder="Present"
                     value={edu.endDate}
+                    disabled={edu.isCurrent}
                     onChange={(e) => handleChange(edu.id, e)}
-                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-500"
                   />
+                  <div className="flex items-center mt-2">
+                    <input
+                      type="checkbox"
+                      id={`isCurrentEdu-${edu.id}`}
+                      checked={edu.isCurrent || false}
+                      onChange={(e) => updateEducation(edu.id, {
+                        isCurrent: e.target.checked,
+                        endDate: e.target.checked ? 'Present' : ''
+                      })}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <label htmlFor={`isCurrentEdu-${edu.id}`} className="ml-2 block text-sm text-gray-900">
+                      I currently study here
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -98,14 +114,13 @@ export default function EducationForm() {
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                <textarea
-                  name="description"
+                <ReactQuill
+                  theme="snow"
                   value={edu.description}
-                  onChange={(e) => handleChange(edu.id, e)}
-                  rows="4"
+                  onChange={(value) => updateEducation(edu.id, { description: value })}
                   placeholder="e.g. Graduated with High Honors..."
-                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
-                ></textarea>
+                  className="bg-white"
+                />
               </div>
             </div>
           </div>

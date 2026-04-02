@@ -22,7 +22,10 @@ export default function CreativeTemplate({ data }) {
         {personalInfo.summary && (
           <section className="mb-6">
             <h2 className="text-xl font-bold text-gray-900 mb-3" style={{ color: themeColor }}>About Me</h2>
-            <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line">{personalInfo.summary}</p>
+            <div 
+              className="text-sm leading-relaxed text-gray-700 quill-content"
+              dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+            />
           </section>
         )}
 
@@ -38,7 +41,12 @@ export default function CreativeTemplate({ data }) {
                     <span className="font-semibold">{job.employer}{job.city ? `, ${job.city}` : ''}</span>
                     <span className="italic">{job.startDate} {job.startDate && job.endDate && '-'} {job.endDate}</span>
                   </div>
-                  {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">{job.description}</p>}
+                  {job.description && (
+                    <div 
+                      className="text-sm leading-relaxed text-gray-700 quill-content"
+                      dangerouslySetInnerHTML={{ __html: job.description }}
+                    />
+                  )}
                 </div>
               ))}
             </div>

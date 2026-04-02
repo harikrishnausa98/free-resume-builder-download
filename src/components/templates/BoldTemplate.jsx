@@ -19,7 +19,10 @@ export default function BoldTemplate({ data }) {
       </header>
       {personalInfo.summary && (
         <section className="mb-8">
-          <p className="text-md font-medium leading-relaxed whitespace-pre-line">{personalInfo.summary}</p>
+          <div 
+            className="text-md font-medium leading-relaxed quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
       {data.workExperience && data.workExperience.length > 0 && (
@@ -30,7 +33,12 @@ export default function BoldTemplate({ data }) {
               <div key={job.id} className="break-inside-avoid">
                 <h3 className="text-xl font-bold">{job.jobTitle}</h3>
                 <p className="text-md font-semibold text-gray-600 uppercase tracking-wider mb-2">{job.employer} // {job.startDate} - {job.endDate}</p>
-                {job.description && <p className="text-sm font-medium leading-relaxed whitespace-pre-line">{job.description}</p>}
+                  {job.description && (
+                    <div 
+                      className="text-sm font-medium leading-relaxed quill-content"
+                      dangerouslySetInnerHTML={{ __html: job.description }}
+                    />
+                  )}
               </div>
             ))}
           </div>

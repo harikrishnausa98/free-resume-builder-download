@@ -1,5 +1,7 @@
 import React from 'react';
 import { useResumeStore } from '../store/useResumeStore';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function WorkExperienceForm() {
   const workExperience = useResumeStore((state) => state.workExperience);
@@ -64,9 +66,8 @@ export default function WorkExperienceForm() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                   <input
-                    type="text"
+                    type="month"
                     name="startDate"
-                    placeholder="MM/YYYY"
                     value={job.startDate}
                     onChange={(e) => handleChange(job.id, e)}
                     className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -75,13 +76,28 @@ export default function WorkExperienceForm() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                   <input
-                    type="text"
+                    type={job.isCurrent ? "text" : "month"}
                     name="endDate"
-                    placeholder="Present"
                     value={job.endDate}
+                    disabled={job.isCurrent}
                     onChange={(e) => handleChange(job.id, e)}
-                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 disabled:text-gray-500"
                   />
+                  <div className="flex items-center mt-2">
+                    <input 
+                      type="checkbox" 
+                      id={`isCurrent-${job.id}`}
+                      checked={job.isCurrent || false}
+                      onChange={(e) => updateWorkExperience(job.id, { 
+                        isCurrent: e.target.checked, 
+                        endDate: e.target.checked ? 'Present' : '' 
+                      })}
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    />
+                    <label htmlFor={`isCurrent-${job.id}`} className="ml-2 block text-sm text-gray-900">
+                      I currently work here
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -98,14 +114,13 @@ export default function WorkExperienceForm() {
 
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
-                <textarea
-                  name="description"
+                <ReactQuill
+                  theme="snow"
                   value={job.description}
-                  onChange={(e) => handleChange(job.id, e)}
-                  rows="4"
+                  onChange={(value) => updateWorkExperience(job.id, { description: value })}
                   placeholder="e.g. Created and implemented a new UI component library..."
-                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
-                ></textarea>
+                  className="bg-white"
+                />
               </div>
             </div>
           </div>

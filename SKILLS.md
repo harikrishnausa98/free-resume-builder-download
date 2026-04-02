@@ -14,9 +14,13 @@ This project demonstrates proficiency in the following technologies and concepts
 * **Tailwind CSS**: Rapid UI development using utility-first CSS classes for responsive design, layout structuring (Flexbox and Grid), and custom interactive states (`hover`, `focus`, `group`).
 * **Interactive Layouts**: Implementing custom DOM event listeners (mouse tracking) to create a draggable, resizable split-screen layout.
 
+## Form Inputs & Editing
+* **Rich Text Editing**: Integration of `react-quill` to provide a WYSIWYG editor for professional descriptions with complex HTML outputs safely managed.
+
 ## Client-Side Document Generation
 * **PDF Export**: Integrating `html2canvas` and `jsPDF` (via `html2pdf.js`) to capture the React DOM and render it into a downloadable, high-quality PDF document entirely on the client side.
 
 ## Build Tools & Architecture
 * **Vite**: Modern frontend build tooling and bundling (inferred from the `dist/assets` output structure).
 * **Component Modularity**: Breaking down complex UIs into maintainable, focused components (e.g., `PersonalInfoForm`, `WorkExperienceForm`, `EducationForm`, `SplitScreenLayout`).
+* **Extensible Architecture (Planned)**: Designing the state and component structure to easily scale for multi-document generation (e.g., expanding from Resumes to Cover Letters) and dynamic data modeling (Custom Sections).

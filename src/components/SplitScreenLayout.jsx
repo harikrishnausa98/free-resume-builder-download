@@ -5,6 +5,14 @@ export default function SplitScreenLayout({ editorContent, previewContent, onDow
   const [isDragging, setIsDragging] = useState(false);
   const [isPreviewMode, setIsPreviewMode] = useState(false); // Handles the preview button
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // Track window resize for responsive layout adjustments
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Handle the drag resizing logic
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -28,10 +36,12 @@ export default function SplitScreenLayout({ editorContent, previewContent, onDow
     };
   }, [isDragging]);
 
+  const isDesktop = windowWidth >= 1024; // matches Tailwind's 'lg' breakpoint
+
   return (
     <div className="flex flex-col h-screen bg-gray-50 font-sans overflow-hidden">
-      <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200 shrink-0 z-20 shadow-sm">
-        <div className="text-2xl font-black text-blue-600 tracking-tighter">
+      <header className="flex items-center justify-between px-4 md:px-6 py-4 bg-white border-b border-gray-200 shrink-0 z-20 shadow-sm">
+        <div className="text-xl md:text-2xl font-black text-blue-600 tracking-tighter">
           Resume.free
         </div>
         <div className="flex gap-4">
@@ -56,18 +66,18 @@ export default function SplitScreenLayout({ editorContent, previewContent, onDow
         {/* LEFT COLUMN: The Editor */}
         {!isPreviewMode && (
           <section 
-            style={{ width: `${leftWidth}%` }}
-            className="h-full overflow-y-auto bg-white shadow-[4px_0_12px_-4px_rgba(0,0,0,0.05)] z-10 custom-scrollbar shrink-0"
+            style={{ width: isDesktop ? `${leftWidth}%` : '100%' }}
+            className="h-full overflow-y-auto bg-white shadow-[4px_0_12px_-4px_rgba(0,0,0,0.05)] z-10 custom-scrollbar shrink-0 transition-all duration-300"
           >
-            <div className="max-w-2xl mx-auto p-8">
-              <h1 className="text-3xl font-bold text-gray-800 mb-6">Build your resume</h1>
+            <div className="max-w-2xl mx-auto p-4 md:p-8">
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Build your resume</h1>
               {editorContent}
             </div>
           </section>
         )}
 
         {/* DRAG HANDLE: The movable divider */}
-        {!isPreviewMode && (
+        {isDesktop && !isPreviewMode && (
           <div 
             onMouseDown={() => setIsDragging(true)}
             className="w-2 bg-gray-200 hover:bg-blue-400 cursor-col-resize z-20 transition-colors flex flex-col justify-center items-center shrink-0"
@@ -78,17 +88,25 @@ export default function SplitScreenLayout({ editorContent, previewContent, onDow
         )}
 
         {/* RIGHT COLUMN: The Live Preview */}
-        <section 
-          style={{ width: isPreviewMode ? '100%' : `${100 - leftWidth}%` }}
-          className="h-full overflow-auto bg-gray-100 custom-scrollbar"
-        >
-          {/* Using w-max solves the 'text hidden on the left' clipping bug */}
-          <div className="w-max mx-auto p-10 flex justify-center">
-            <div className="w-[794px] min-h-[1123px] bg-white shadow-xl rounded-sm ring-1 ring-gray-200 shrink-0">
-              {previewContent}
+        {(isPreviewMode || isDesktop) && (
+          <section 
+            style={{ width: isDesktop ? (isPreviewMode ? '100%' : `${100 - leftWidth}%`) : '100%' }}
+            className="h-full overflow-auto bg-gray-100 custom-scrollbar"
+          >
+            {/* 
+              Using w-max solves the 'text hidden on the left' clipping bug on desktop.
+              We apply a dynamic CSS scale transform on smaller screens so the A4 preview fits within the viewport.
+            */}
+            <div 
+              className="w-max mx-auto p-4 md:p-10 flex justify-center origin-top"
+              style={{ transform: !isDesktop ? `scale(${Math.min(1, (windowWidth - 32) / 794)})` : 'none' }}
+            >
+              <div className="w-[794px] min-h-[1123px] bg-white shadow-xl rounded-sm ring-1 ring-gray-200 shrink-0">
+                {previewContent}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
       </main>
     </div>

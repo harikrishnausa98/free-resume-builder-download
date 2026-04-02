@@ -59,14 +59,15 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [x] Create at least two distinct resume layouts (e.g., classic single-column, modern two-column).
   * [x] Add a visual template selector UI in the Settings panel.
 
-## Phase 8: Rich Text Editing (WYSIWYG) (⏳ In Progress)
+## Phase 8: Rich Text Editing (WYSIWYG) (✅ Completed)
 * **Focus:** Enhance text descriptions with professional formatting.
+* **Tech Stack:** `react-quill`
 * **Action Items:**
-  * [ ] Replace standard `<textarea>` inputs with a client-side Rich Text Editor (e.g., `react-quill` or `tiptap`).
-  * [ ] Provide a formatting toolbar (Bold, Italics, Bulleted/Numbered Lists).
-  * [ ] Update Live Preview to safely parse and render formatted HTML.
+  * [x] Replace standard `<textarea>` inputs with a client-side Rich Text Editor (e.g., `react-quill` or `tiptap`).
+  * [x] Provide a formatting toolbar (Bold, Italics, Bulleted/Numbered Lists).
+  * [x] Update Live Preview to safely parse and render formatted HTML.
 
-## Phase 9: Data Portability & Advanced UX (⏳ Planning)
+## Phase 9: Data Portability & Advanced UX (⏳ In Progress)
 * **Focus:** Allow data portability and seamless data entry reordering.
 * **Action Items:**
   * [ ] Implement JSON Export/Import to bypass `localStorage` limitations.
@@ -80,3 +81,49 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [ ] Sync local Zustand store data with the cloud database.
   * [ ] Enforce Row Level Security (RLS) for data privacy.
   * [ ] Implement data encryption for PII and advanced XSS protection.
+
+## Phase 11: Cover Letter Builder (⏳ Planning)
+* **Focus:** Expand the application to generate theme-matching cover letters.
+* **Action Items:**
+  * [ ] Add a "Cover Letter" toggle/tab in the main UI to switch editor modes.
+  * [ ] Create a Zustand store slice for Cover Letter state (Sender, Recipient, Body, Date).
+  * [ ] Build Cover Letter data entry form components.
+  * [ ] Build Cover Letter Live Preview component utilizing the global theme/typography settings.
+  * [ ] Update PDF export engine to support standalone or combined (Resume + Cover Letter) PDF generation.
+
+## Phase 12: Custom Resume Sections (⏳ Planning)
+* **Focus:** Allow users to create, manage, and reorder custom resume sections.
+* **Action Items:**
+  * [ ] Expand Zustand store to support dynamic custom sections (list or text-based).
+  * [ ] Build a UI to add, name, and delete custom sections.
+  * [ ] Create dynamic form components for data entry within custom sections.
+  * [ ] Implement drag-and-drop (`@dnd-kit`) to reorder the layout of all sections globally.
+  * [ ] Update all templates to render custom sections dynamically based on user-defined order.
+
+## Phase 13: ATS Optimization & Job Match Scoring (⏳ Planning)
+* **Focus:** Help users tailor their resume to specific job descriptions.
+* **Action Items:**
+  * [ ] Create a text input for users to paste a Job Description.
+  * [ ] Implement keyword extraction and comparison logic.
+  * [ ] Build a UI to display the "ATS Match Score" and missing keywords.
+
+## Phase 14: Multiple Resume Profiles/Versions (⏳ Planning)
+* **Focus:** Allow users to create, save, and manage multiple distinct resumes.
+* **Action Items:**
+  * [ ] Update Zustand store to support multiple resume objects and a `currentResumeId`.
+  * [ ] Build a Dashboard UI for users to view, duplicate, and delete saved resumes.
+  * [ ] Integrate multi-document syncing with Cloud Storage (Phase 10).
+
+## Phase 15: LinkedIn Profile Import (⏳ Planning)
+* **Focus:** Speed up onboarding by extracting data from LinkedIn PDF exports.
+* **Action Items:**
+  * [ ] Add a file upload dropzone for LinkedIn PDFs.
+  * [ ] Integrate a client-side PDF text extraction library (e.g., `pdf.js`).
+  * [ ] Build a parser to map LinkedIn text sections to the Zustand store schema.
+
+## Future Phase (Final Feature): AI-Powered Content Generation (⏳ Planning)
+* **Focus:** Integrate an AI API to assist users with writing resume content.
+* **Action Items:**
+  * [ ] Integrate an AI API (e.g., Google Gemini or OpenAI).
+  * [ ] Add "Fix my grammar" and "Make it professional" actions to text areas.
+  * [ ] Create a "Generate bullet points" button based on job titles.

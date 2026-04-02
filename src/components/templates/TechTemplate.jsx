@@ -28,7 +28,10 @@ export default function TechTemplate({ data }) {
       {personalInfo.summary && (
         <section className="mb-8">
           <SectionTitle title="Summary" />
-          <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line">{personalInfo.summary}</p>
+          <div 
+            className="text-sm leading-relaxed text-gray-700 quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
       {data.skills && data.skills.length > 0 && (
@@ -49,7 +52,12 @@ export default function TechTemplate({ data }) {
                   <h3 className="text-lg font-bold">{job.jobTitle} <span className="text-gray-500 font-medium">@ {job.employer}</span></h3>
                   <span className="text-sm font-mono text-gray-500">{job.startDate} - {job.endDate}</span>
                 </div>
-                {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700 mt-2">{job.description}</p>}
+                {job.description && (
+                  <div 
+                    className="text-sm leading-relaxed text-gray-700 mt-2 quill-content"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
+                )}
               </div>
             ))}
           </div>

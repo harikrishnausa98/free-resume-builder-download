@@ -18,18 +18,23 @@ This is a "Free Resume Builder" application. It's a client-side React applicatio
 
 ## 4. Current Development Status
 
-- **Completed (Phases 1-7):** Core architecture, state management, split-screen UI, all data entry forms, PDF export, theme/typography customization, and multiple resume templates are complete.
-- **Next Task (Phase 8 - Planning):** The next major feature to implement is **Rich Text Editing (WYSIWYG)**.
+- **Completed (Phases 1-8):** Core architecture, state management, split-screen UI, all data entry forms, drag-and-drop reordering for skills, PDF export, theme customization, multiple templates, and Rich Text Editing (WYSIWYG) including preview rendering fixes.
+- **Current Task (Phase 9 - In Progress):** The current major feature being implemented is **Data Portability & Advanced UX**.
+- **Upcoming Tasks (Phases 10-15+ - Planning):** User Authentication & Cloud Storage, Cover Letter Builder, Custom Resume Sections, ATS Optimization, Multiple Profiles, LinkedIn Import, and eventually AI-Powered Content Generation (slated as the final feature).
 
 ## 5. Immediate Goal
 
-The immediate goal is to begin work on Phase 8. This involves:
-1.  Replacing standard `<textarea>` inputs with a client-side Rich Text Editor (e.g., `react-quill` or `tiptap`).
-2.  Providing a formatting toolbar (Bold, Italics, Bulleted/Numbered Lists).
-3.  Updating the Live Preview to safely parse and render formatted HTML.
+The immediate goal is to start work on Phase 9 (Data Portability & Advanced UX). This involves:
+1. Implementing JSON Export/Import to bypass `localStorage` limitations.
+2. Implementing Schema Validation for uploaded JSON files.
+3. Adding drag-and-drop reordering for Work Experience and Education arrays.
 
 ## 6. Standing Instructions
 
 *   **Always Update Documentation:** Whenever you make code changes, add features, or complete development phases, you **must** also update any relevant project documentation. This includes, but is not limited to:
     *   `DEVELOPMENT_PLAN.md`: Mark completed phases and update the status of the current phase.
     *   `FEATURES.md` / `PROJECT_REQUIREMENTS.md`: Update feature lists to reflect new or changed functionality.
+    * `AI_CONTEXT.md` : update this document too
+    * Based on the conversation going always update the `SKILLS.md` file too
+    * Also start updating the `README.md` file too file for the unknown person to read and know abt the project details
+    

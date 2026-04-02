@@ -40,9 +40,10 @@ export default function ModernTemplate({ data }) {
           <h2 className="text-lg font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3 uppercase tracking-wide">
             Professional Summary
           </h2>
-          <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line">
-            {personalInfo.summary}
-          </p>
+          <div 
+            className="text-sm leading-relaxed text-gray-700 quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
 
@@ -71,9 +72,10 @@ export default function ModernTemplate({ data }) {
                   </div>
                 </div>
                 {job.description && (
-                  <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line mt-2">
-                    {job.description}
-                  </p>
+                  <div 
+                    className="text-sm text-gray-700 leading-relaxed mt-2 quill-content"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
                 )}
               </div>
             ))}
@@ -113,9 +115,10 @@ export default function ModernTemplate({ data }) {
                   </div>
                 </div>
                 {edu.description && (
-                  <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line mt-2">
-                    {edu.description}
-                  </p>
+                  <div 
+                    className="text-sm text-gray-700 leading-relaxed mt-2 quill-content"
+                    dangerouslySetInnerHTML={{ __html: edu.description }}
+                  />
                 )}
               </div>
             ))}

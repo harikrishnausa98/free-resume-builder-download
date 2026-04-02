@@ -40,7 +40,10 @@ export default function ExecutiveTemplate({ data }) {
           {personalInfo.summary && (
             <section className="mb-8">
               <h2 className="text-sm font-bold uppercase tracking-wider mb-3" style={{ color: themeColor }}>Profile</h2>
-              <p className="text-sm leading-relaxed text-gray-700 whitespace-pre-line">{personalInfo.summary}</p>
+              <div 
+                className="text-sm leading-relaxed text-gray-700 quill-content"
+                dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+              />
             </section>
           )}
           {data.workExperience && data.workExperience.length > 0 && (
@@ -51,7 +54,12 @@ export default function ExecutiveTemplate({ data }) {
                   <div key={job.id} className="break-inside-avoid">
                     <h3 className="text-lg font-bold text-gray-900">{job.jobTitle}</h3>
                     <p className="text-sm font-medium text-gray-500 mb-2">{job.employer} | {job.startDate} - {job.endDate}</p>
-                    {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-700">{job.description}</p>}
+                      {job.description && (
+                        <div 
+                          className="text-sm leading-relaxed text-gray-700 quill-content"
+                          dangerouslySetInnerHTML={{ __html: job.description }}
+                        />
+                      )}
                   </div>))}
               </div>
             </section>

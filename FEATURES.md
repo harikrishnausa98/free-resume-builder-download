@@ -25,3 +25,17 @@ The Free Resume Builder includes the following core features designed to provide
 
 ## 6. Customization & Templates
 * Choose from 10 distinct professional resume templates (Modern, Classic, Minimalist, Professional, Creative, Elegant, Compact, Bold, Executive, Tech), customize the primary accent color, and select from professional fonts (Inter, Roboto, Merriweather) to personalize the document.
+
+## 7. Rich Text Editing (WYSIWYG)
+* **WYSIWYG Editor**: Write your Professional Summary and Job/Education Descriptions with a fully-featured text editor.
+* **Formatting**: Easily apply Bold, Italic, Underline, and Bulleted/Numbered Lists to make your achievements stand out.
+
+## 8. Coming Soon (Roadmap)
+* **Data Portability**: JSON export and import capabilities.
+* **Cloud Sync & User Accounts**: Save multiple resumes securely to the cloud.
+* **Custom Resume Sections**: Add and reorder your own categories (e.g., Certifications, Languages).
+* **Cover Letter Builder**: Generate perfectly matched cover letters for your applications.
+* **ATS Optimization**: Match your resume against job descriptions for a higher ATS score.
+* **Multiple Profiles**: Manage different versions of your resume for different job types.
+* **LinkedIn Import**: Jumpstart your resume by importing your LinkedIn profile.
+* **AI-Assisted Writing**: Grammar checks and smart bullet point generation.

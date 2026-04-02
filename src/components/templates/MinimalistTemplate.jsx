@@ -24,9 +24,10 @@ export default function MinimalistTemplate({ data }) {
 
       {personalInfo.summary && (
         <section className="mb-8">
-          <p className="text-sm leading-loose text-gray-600 whitespace-pre-line">
-            {personalInfo.summary}
-          </p>
+          <div 
+            className="text-sm leading-loose text-gray-600 quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
 
@@ -40,7 +41,12 @@ export default function MinimalistTemplate({ data }) {
                   <h3 className="text-base font-medium text-gray-900">{job.jobTitle} <span className="text-gray-500 font-normal">| {job.employer}</span></h3>
                   <span className="text-xs text-gray-400">{job.startDate} {job.startDate && job.endDate && '—'} {job.endDate}</span>
                 </div>
-                {job.description && <p className="text-sm leading-relaxed whitespace-pre-line text-gray-600">{job.description}</p>}
+                {job.description && (
+                  <div 
+                    className="text-sm leading-relaxed text-gray-600 quill-content"
+                    dangerouslySetInnerHTML={{ __html: job.description }}
+                  />
+                )}
               </div>
             ))}
           </div>

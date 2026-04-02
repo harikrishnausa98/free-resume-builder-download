@@ -27,6 +27,11 @@ The following features are currently implemented and considered complete.
 *   Polished form inputs with active focus states, smooth transitions, and intuitive "Add/Remove" interactions for list-based data.
 *   Custom scrollbars for a refined look and feel.
 
+### 1.6. Rich Text Editing (WYSIWYG)
+*   **Editor Integration**: Lightweight, client-side Rich Text Editor (`react-quill`) replaces standard textareas for Professional Summary and Job Descriptions.
+*   **Formatting Options**: Users can add Bold, Italics, and Bulleted/Numbered Lists.
+*   **Preview Rendering**: Safely parsing and rendering the formatted HTML output onto the live resume templates.
+
 ## 2. Upcoming Features (In Progress & Planning)
 
 *(This section will be filled in as we plan the next development phases.)*
@@ -47,19 +52,43 @@ The following features are currently implemented and considered complete.
 *   **Template Varieties**: Create at least 10 distinct resume layouts (Modern, Classic, Minimalist, Professional, Creative, Elegant, Compact, Bold, Executive, Tech).
 *   **Template Selector UI**: Add a visual selector in the Settings panel for users to switch between available templates instantly.
 
-### 2.4. Rich Text Editing (Phase 5 - Planning)
-*   **Editor Integration**: Replace standard `<textarea>` inputs for "Professional Summary" and "Job Descriptions" with a lightweight, client-side Rich Text Editor (e.g., `react-quill` or `tiptap`).
-*   **Formatting Options**: Provide a small toolbar for users to add Bold, Italics, and Bulleted/Numbered Lists.
-*   **Preview Rendering**: Update the Live Preview components to safely parse and render the formatted HTML output from the editor.
-
-### 2.5. Data Portability & Advanced UX (Phase 6 - Planning)
+### 2.4. Data Portability & Advanced UX (Phase 9 - In Progress)
 *   **Import/Export JSON**: Allow users to download their raw resume data as a `.json` file and upload it to restore progress across devices, bypassing the limitations of `localStorage`.
 *   **Drag-and-Drop Reordering**: Implement drag-and-drop functionality (e.g., using `dnd-kit` or `@hello-pangea/dnd`) to let users easily reorder their Work Experience and Education array entries.
 *   **Schema Validation**: Ensure uploaded JSON files are validated against the expected Zustand store schema to prevent application crashes from corrupted imports.
 
-### 2.6. User Authentication & Cloud Storage (Phase 7 - Planning)
+### 2.5. User Authentication & Cloud Storage (Phase 10 - Planning)
 *   **Authentication System**: Implement secure user registration and login using a BaaS (Backend-as-a-Service) provider like Firebase Auth, Supabase, or Auth0. Support Email/Password and social OAuth (e.g., Google).
 *   **Cloud Sync**: Sync the Zustand store with a cloud database (Firestore or PostgreSQL) to allow cross-device access, replacing the strict reliance on `localStorage`.
 *   **Row Level Security (RLS)**: Enforce strict database authorization policies to ensure users can only read, update, and delete their own resume documents.
 *   **Data Encryption & Privacy**: Ensure Personally Identifiable Information (PII) is encrypted at rest in the database.
 *   **Advanced XSS Protection**: Enforce strict validation and sanitization of all user inputs before they are written to the database to prevent cross-site scripting attacks.
+
+### 2.6. Cover Letter Builder (Phase 11 - Planning)
+*   **Editor Tab**: A dedicated tab/mode in the UI to switch from building a Resume to building a Cover Letter.
+*   **Theme Synchronization**: The cover letter must seamlessly inherit the active resume template's typography and primary color scheme.
+*   **Export Options**: Users should be able to download the cover letter as a standalone PDF or combined with the resume document.
+
+### 2.7. Custom Resume Sections (Phase 12 - Planning)
+*   **Dynamic Creation**: Users can create new sections (e.g., "Certifications", "Languages") and choose their data type (list of items or rich text block).
+*   **Global Reordering**: Users can use drag-and-drop to reorder entire sections (e.g., moving "Education" above "Work Experience").
+*   **Template Integration**: All resume templates must support rendering these dynamic sections seamlessly, adhering to the active theme.
+
+### 2.8. ATS Optimization & Job Match Scoring (Phase 13 - Planning)
+*   **Job Description Input**: A dedicated area to paste a target job description.
+*   **Keyword Analysis**: Extract and compare keywords between the resume and the job description.
+*   **Scoring & Suggestions**: Calculate an "ATS Match Score" and suggest missing keywords to improve the match.
+
+### 2.9. Multiple Resume Profiles/Versions (Phase 14 - Planning)
+*   **Dashboard**: A dedicated view to manage multiple resumes.
+*   **Management Actions**: Users must be able to create new, duplicate, edit, and delete specific resume versions.
+*   **Cloud Persistence**: All profiles must independently sync to the user's cloud account.
+
+### 2.10. LinkedIn Profile Import (Phase 15 - Planning)
+*   **PDF Upload**: A secure, client-side dropzone for LinkedIn's native "Save to PDF" documents.
+*   **Data Extraction & Mapping**: Automatically parse and populate the user's Personal Info, Experience, Education, and Skills forms based on the PDF content.
+
+### 2.11. AI-Powered Content Generation (Future Planning - Final Feature)
+*   **API Integration**: Connect to a robust AI API (e.g., Google Gemini).
+*   **Smart Editing**: Buttons for "Fix my grammar" or "Make it sound more professional" integrated into the text editors.
+*   **Content Generation**: "Generate bullet points" for job descriptions based on a provided job title.

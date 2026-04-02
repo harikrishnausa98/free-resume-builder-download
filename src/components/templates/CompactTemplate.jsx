@@ -21,7 +21,10 @@ export default function CompactTemplate({ data }) {
       </header>
       {personalInfo.summary && (
         <section className="mb-4">
-          <p className="text-xs leading-tight text-gray-800 whitespace-pre-line">{personalInfo.summary}</p>
+          <div 
+            className="text-xs leading-tight text-gray-800 quill-content"
+            dangerouslySetInnerHTML={{ __html: personalInfo.summary }}
+          />
         </section>
       )}
       <div className="grid grid-cols-3 gap-6">
@@ -34,7 +37,12 @@ export default function CompactTemplate({ data }) {
                   <div key={job.id} className="break-inside-avoid">
                     <h3 className="text-sm font-bold">{job.jobTitle} <span className="font-normal">| {job.employer}</span></h3>
                     <p className="text-xs text-gray-500 mb-1">{job.startDate} - {job.endDate}</p>
-                    {job.description && <p className="text-xs leading-tight whitespace-pre-line text-gray-700">{job.description}</p>}
+                    {job.description && (
+                      <div 
+                        className="text-xs leading-tight text-gray-700 quill-content"
+                        dangerouslySetInnerHTML={{ __html: job.description }}
+                      />
+                    )}
                   </div>
                 ))}
               </div>
