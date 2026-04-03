@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useAuthStore } from '../store/useAuthStore';
 
-export default function SplitScreenLayout({ editorContent, previewContent, onDownloadPdf }) {
+export default function SplitScreenLayout({ editorContent, previewContent, onDownloadPdf, onLoginClick }) {
   const [leftWidth, setLeftWidth] = useState(50); // Starting width 50%
   const [isDragging, setIsDragging] = useState(false);
   const [isPreviewMode, setIsPreviewMode] = useState(false); // Handles the preview button
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   // Track window resize for responsive layout adjustments
+  const user = useAuthStore((state) => state.user);
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -45,6 +47,11 @@ export default function SplitScreenLayout({ editorContent, previewContent, onDow
           Resume.free
         </div>
         <div className="flex gap-4">
+          {user ? (
+            <button onClick={() => useAuthStore.getState().logout()} className="px-5 py-2 text-sm font-semibold text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">Logout</button>
+          ) : (
+            <button onClick={onLoginClick} className="px-5 py-2 text-sm font-semibold text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">Sign In</button>
+          )}
           <button 
             onClick={() => setIsPreviewMode(!isPreviewMode)}
             className="px-5 py-2 text-sm font-semibold text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"

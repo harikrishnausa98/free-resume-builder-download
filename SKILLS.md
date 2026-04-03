@@ -10,6 +10,10 @@ This project demonstrates proficiency in the following technologies and concepts
 * **Zustand**: Implementation of a lightweight, scalable global state management solution (`useResumeStore`) to handle complex form data across multiple independent components.
 * **State Persistence**: Utilizing Zustand's `persist` middleware to automatically cache the user's resume data in the browser's `localStorage`, ensuring data is not lost on refresh.
 
+## Backend & Cloud Sync
+* **Firebase Authentication**: Support for Google (Gmail) OAuth, LinkedIn OAuth, and secure Phone Number (OTP) login directly from the client.
+* **Cloud Firestore**: Real-time NoSQL database integration to securely persist and sync user resume progress across devices via Firestore schema binding and Row Level Security rules.
+
 ## Styling & UI Design
 * **Tailwind CSS**: Rapid UI development using utility-first CSS classes for responsive design, layout structuring (Flexbox and Grid), and custom interactive states (`hover`, `focus`, `group`).
 * **Interactive Layouts**: Implementing custom DOM event listeners (mouse tracking) to create a draggable, resizable split-screen layout.

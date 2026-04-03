@@ -74,13 +74,14 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [ ] Implement Schema Validation for uploaded JSON files.
   * [ ] Add drag-and-drop reordering for Work Experience and Education arrays.
 
-## Phase 10: User Authentication & Cloud Storage (⏳ Planning)
+## Phase 10: User Authentication & Cloud Storage (✅ Completed)
 * **Focus:** Transition to a cloud-synced platform.
 * **Action Items:**
-  * [ ] Implement secure user registration and login using a BaaS (e.g., Firebase, Supabase).
-  * [ ] Sync local Zustand store data with the cloud database.
-  * [ ] Enforce Row Level Security (RLS) for data privacy.
-  * [ ] Implement data encryption for PII and advanced XSS protection.
+  * [x] **Authentication:** Implement Firebase Authentication supporting Email/Password, Google (Gmail) OAuth, LinkedIn OAuth, and Phone Number login.
+  * [x] **Database Design:** Structure Firestore documents to cleanly store user profiles and their resume data.
+  * [x] **Cloud Sync:** Create a sync mechanism between the local Zustand store and Firestore (e.g., auto-save to cloud when authenticated, fetch on login).
+  * [x] **Security Rules:** Write strict Firebase Security Rules to ensure users can only read, update, and delete their own documents.
+  * [x] **Data Privacy & Security:** Ensure PII is handled securely and maintain strict XSS sanitization (via DOMPurify) for all cloud-retrieved data.
 
 ## Phase 11: Cover Letter Builder (⏳ Planning)
 * **Focus:** Expand the application to generate theme-matching cover letters.

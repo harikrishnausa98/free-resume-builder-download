@@ -58,11 +58,11 @@ The following features are currently implemented and considered complete.
 *   **Schema Validation**: Ensure uploaded JSON files are validated against the expected Zustand store schema to prevent application crashes from corrupted imports.
 
 ### 2.5. User Authentication & Cloud Storage (Phase 10 - Planning)
-*   **Authentication System**: Implement secure user registration and login using a BaaS (Backend-as-a-Service) provider like Firebase Auth, Supabase, or Auth0. Support Email/Password and social OAuth (e.g., Google).
-*   **Cloud Sync**: Sync the Zustand store with a cloud database (Firestore or PostgreSQL) to allow cross-device access, replacing the strict reliance on `localStorage`.
-*   **Row Level Security (RLS)**: Enforce strict database authorization policies to ensure users can only read, update, and delete their own resume documents.
+*   **Authentication System**: Implement secure user registration and login using Firebase Auth. Support Email/Password, Google (Gmail), LinkedIn OAuth, and Phone Number authentication.
+*   **Cloud Sync**: Sync the Zustand store with Firestore to allow cross-device access, serving as a cloud-based alternative to `localStorage`.
+*   **Security Rules**: Enforce strict Firebase Security Rules to ensure users can only read, write, and delete their own resume documents.
 *   **Data Encryption & Privacy**: Ensure Personally Identifiable Information (PII) is encrypted at rest in the database.
-*   **Advanced XSS Protection**: Enforce strict validation and sanitization of all user inputs before they are written to the database to prevent cross-site scripting attacks.
+*   **Advanced XSS Protection**: Enforce strict validation and sanitization (via DOMPurify) of all user inputs before they are written to or read from the database to prevent cross-site scripting attacks.
 
 ### 2.6. Cover Letter Builder (Phase 11 - Planning)
 *   **Editor Tab**: A dedicated tab/mode in the UI to switch from building a Resume to building a Cover Letter.
