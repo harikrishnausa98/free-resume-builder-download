@@ -32,7 +32,7 @@ The Free Resume Builder includes the following core features designed to provide
 
 ## 8. Coming Soon (Roadmap)
 * **Data Portability**: JSON export and import capabilities.
-* **Cloud Sync & User Accounts**: Save multiple resumes securely to the cloud.
+* **Cloud Sync & User Accounts**: Save your resume securely to the cloud with email/password accounts.
 * **Custom Resume Sections**: Add and reorder your own categories (e.g., Certifications, Languages).
 * **Cover Letter Builder**: Generate perfectly matched cover letters for your applications.
 * **ATS Optimization**: Match your resume against job descriptions for a higher ATS score.

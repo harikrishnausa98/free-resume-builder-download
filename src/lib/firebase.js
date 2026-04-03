@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, OAuthProvider } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -11,15 +11,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-let app;
-try {
-  app = initializeApp(firebaseConfig);
-} catch (error) {
-  console.error("Firebase initialization error:", error);
-}
-
-export const auth = app ? getAuth(app) : null;
-export const db = app ? getFirestore(app) : null;
-
-export const googleProvider = new GoogleAuthProvider();
-export const linkedinProvider = new OAuthProvider('oidc.linkedin');
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);

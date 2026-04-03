@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yari Resumes | The Architectural Curator of Careers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6f3800",
+                    "surface-container": "#edeeef",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#a100ff",
+                    "surface": "#f8f9fa",
+                    "outline-variant": "#d1c1d8",
+                    "tertiary-container": "#a55700",
+                    "secondary": "#0060a8",
+                    "surface-tint": "#8e00e2",
+                    "tertiary-fixed": "#ffdcc4",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d9dadb",
+                    "secondary-container": "#58a6fe",
+                    "tertiary": "#814300",
+                    "on-surface": "#191c1d",
+                    "surface-container-high": "#e7e8e9",
+                    "on-secondary-fixed": "#001c38",
+                    "outline": "#807287",
+                    "on-tertiary-fixed": "#2f1500",
+                    "secondary-fixed": "#d3e4ff",
+                    "background": "#f8f9fa",
+                    "on-primary-fixed": "#2e004e",
+                    "on-secondary-fixed-variant": "#004881",
+                    "on-secondary-container": "#003b6a",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#6c00ae",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#f2daff",
+                    "tertiary-fixed-dim": "#ffb77f",
+                    "on-primary": "#ffffff",
+                    "primary": "#7e00c9",
+                    "surface-container-low": "#f3f4f5",
+                    "on-background": "#191c1d",
+                    "secondary-fixed-dim": "#a2c9ff",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container-highest": "#e1e3e4",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#e1b6ff",
+                    "primary-fixed-dim": "#e1b6ff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-primary-container": "#f9e8ff",
+                    "on-surface-variant": "#4e4256",
+                    "inverse-surface": "#2e3132",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#ffeadc",
+                    "surface-bright": "#f8f9fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #191c1d; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+        .hero-gradient { background: linear-gradient(135deg, #7e00c9 0%, #a100ff 100%); }
+   
+        @keyframes resume-shuffle {
+            0%, 100% { transform: rotate(2deg) translateX(0); z-index: 10; }
+            25% { transform: rotate(-2deg) translateX(-10px); z-index: 5; }
+            50% { transform: rotate(0deg) translateY(10px); z-index: 5; }
+            75% { transform: rotate(4deg) translateX(10px); z-index: 10; }
+        }
+        .animate-shuffle { animation: resume-shuffle 8s ease-in-out infinite; }
+       
+        @keyframes sub-card-shuffle {
+            0%, 100% { transform: rotate(-6deg) translate(0, 0); }
+            50% { transform: rotate(-2deg) translate(-20px, -20px); }
+        }
+        .animate-sub-shuffle { animation: sub-card-shuffle 8s ease-in-out infinite; }
+    </style>
+</head>
+<body class="selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full glass-nav z-50">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-purple-700 dark:text-purple-400">Yari Resumes</div>
+<div class="hidden md:flex items-center space-x-10 font-inter tracking-tight font-medium">
+<a class="text-slate-600 hover:text-purple-600 transition-colors" href="#">ATS Templates</a>
+<a class="text-slate-600 hover:text-purple-600 transition-colors" href="#">Modern Templates</a>
+</div>
+<div class="flex items-center space-x-6 font-inter tracking-tight font-medium">
+<button class="text-slate-600 hover:text-purple-600 transition-colors outline-none px-4 py-2 border border-outline/20 rounded hover:border-purple-600/30">Sign In</button>
+<button class="hero-gradient text-white px-6 py-2.5 rounded font-bold hover:scale-[1.02] transition-transform duration-200">Create Resume</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 md:py-32 grid md:grid-cols-2 gap-20 items-center">
+<div class="space-y-10">
+<div class="space-y-4">
+<span class="label-md uppercase tracking-[0.05em] text-secondary font-bold text-xs">Architectural Career Tools</span>
+<h1 class="text-6xl md:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1]">
+                        Build Your Professional <span class="text-transparent bg-clip-text hero-gradient">Resume</span> in Minutes
+                    </h1>
+</div>
+<p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
+                    Elevate your professional narrative with ATS-friendly templates curated for the modern architect of business. Structure your success with intentional design.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="hero-gradient text-white px-8 py-4 rounded-lg font-bold text-lg hover:scale-[1.02] transition-transform duration-200 shadow-xl shadow-primary/10">Build Your Resume</button>
+<button class="bg-white border border-outline/20 text-secondary px-8 py-4 rounded-lg font-bold text-lg hover:scale-[1.02] transition-transform duration-200">Browse Templates</button>
+</div>
+</div>
+<div class="relative group">
+<!-- Architectural Layering Mockup -->
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-secondary-fixed opacity-20 rounded-full blur-3xl group-hover:opacity-30 transition-opacity"></div>
+<div class="relative bg-surface-container-low rounded-xl p-4 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500 animate-shuffle">
+<img class="rounded shadow-sm brightness-[0.98]" data-alt="A high-fidelity, professional resume document mockup for a Senior Software Engineer named Aarav Sharma at Infosys, featuring the violet and blue color scheme of the Yari Resumes brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA-ljH6YsjiCcS-5FICvLhcFZEfZfLZiCjgUEYB1fgXCzkyMMlExCr4X8lHGbAgv6UO0LoDBct1agJLqFyeLQKD894rQIK8xYa7YOR8v7wGIevH65JGMdAIKUiUDVqGizXS2wVbp314bHiw6B_GNLTvOkARVqANbc7ynibbFrcb9j07ZNIhhonU2BA6K4km299zCzOHB-j_QLQtRpWRKwbsO3dQNaXZOvjEiQ3Lx3U_lXoLQNi_P-Wt8ILbLHP-dw7a4amurbESQ"/>
+<div class="absolute -bottom-8 -right-8 w-64 md:w-80 bg-surface-container-lowest rounded-xl p-4 shadow-2xl -rotate-6 group-hover:-rotate-2 transition-all duration-500 delay-75 animate-sub-shuffle">
+<img class="rounded shadow-sm" data-alt="Modern resume template showing Priya Patel's profile, a Senior Marketing Manager, with a clean blue and violet accent color scheme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHJ008CCwbHMebAIJ3WD1cHa4acJ1gDrYW4Asgu5S8wut6fkL7X3s69fa7uCLxhr4caMKsBNQPWKxuDFrADxNrTnzMRxrr0yHryHKeZVlmUqd5sN7NdY7TVXeyBZWWVm7G9v2OcIKGP8ON2wMcis-vokoO0sbSoz1pFCuy5vLwU7JLEWZxJ-gt6HE7pu7usQov4WY8eEI_dC1BsRPa4FfkGqYnsdj_g6KradKXTUtJyIlktAJEq-gKWalcs_yNerKmYj3X1NmxwA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section (Bento Inspired) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-12">
+<div class="bg-surface-container-lowest rounded-2xl p-12 md:p-20 shadow-sm border border-outline-variant/15 flex flex-col md:flex-row gap-16">
+<div class="md:w-1/3 space-y-6">
+<h2 class="text-4xl font-black tracking-tighter text-on-surface">About Yari Resumes</h2>
+<div class="h-1 w-20 hero-gradient rounded-full"></div>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                            We believe that every career deserves a beautiful frame. Yari Resumes merges technical ATS precision with editorial-grade aesthetics.
+                        </p>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-12">
+<!-- Feature 1 -->
+<div class="space-y-4 group">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Easy resume creation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Focus on your story while our intuitive curator handles the architectural layout automatically.</p>
+</div>
+<!-- Feature 2 -->
+<div class="space-y-4 group">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="robot_2">robot_2</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">ATS-friendly templates</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Engineered to pass through screening algorithms without sacrificing visual authority or brand identity.</p>
+</div>
+<!-- Feature 3 -->
+<div class="space-y-4 group">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Modern designs</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Inspired by architectural blueprints and premium editorial magazines for a look that commands respect.</p>
+</div>
+<!-- Feature 4 -->
+<div class="space-y-4 group">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Secure &amp; Private</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Your professional data is encrypted and handled with the highest degree of architectural integrity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skill Chips (Visual Accent) -->
+<section class="max-w-7xl mx-auto px-12 py-16 flex flex-wrap justify-center gap-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Project Management</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Strategic Design</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Growth Leadership</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Data Architecture</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest">Brand Strategy</span>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 max-w-7xl mx-auto w-full">
+<div class="space-y-2 text-center md:text-left mb-8 md:mb-0">
+<div class="text-lg font-bold text-slate-900 dark:text-white">Yari Resumes</div>
+<p class="text-sm font-inter tracking-wide text-slate-500 dark:text-slate-400">© 2024 Yari Resumes. Architectural Curator.</p>
+</div>
+<div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-12">
+<a class="text-sm font-inter tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-sm font-inter tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-colors opacity-80 hover:opacity-100" href="#">Terms and Conditions</a>
+<a class="text-sm font-inter tracking-wide text-slate-500 dark:text-slate-400 hover:text-blue-500 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
+
+
+

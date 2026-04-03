@@ -1,29 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/useAuthStore';
-import { auth } from '../lib/firebase';
-import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+// import { auth } from '../lib/firebase';
+// import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 
 export default function AuthModal({ isOpen, onClose }) {
-  const { loginWithGoogle, loginWithLinkedIn, error, clearError } = useAuthStore();
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [verificationCode, setVerificationCode] = useState('');
-  const [confirmationResult, setConfirmationResult] = useState(null);
+  const { error, clearError, loginWithEmail, registerWithEmail } = useAuthStore();
+  // const [phoneNumber, setPhoneNumber] = useState('');
+  // const [verificationCode, setVerificationCode] = useState('');
+  // const [confirmationResult, setConfirmationResult] = useState(null);
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  /*
   useEffect(() => {
-    if (!window.recaptchaVerifier && isOpen) {
+    if (isOpen) {
+      if (window.recaptchaVerifier) {
+        window.recaptchaVerifier.clear();
+        window.recaptchaVerifier = null;
+      }
       window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
         'size': 'invisible',
       });
     }
   }, [isOpen]);
+  */
 
   if (!isOpen) return null;
 
+  /*
   const handleLogin = async (provider) => {
     if (provider === 'google') {
       await loginWithGoogle();
-    } else if (provider === 'linkedin') {
-      await loginWithLinkedIn();
     }
     onClose();
   };
@@ -48,6 +56,25 @@ export default function AuthModal({ isOpen, onClose }) {
       useAuthStore.setState({ error: err.message });
     }
   };
+  */
+
+  const handleEmailLogin = async () => {
+    try {
+      await loginWithEmail(email, password);
+      onClose();
+    } catch (err) {
+      // Error is caught and set in the store
+    }
+  };
+
+  const handleEmailRegister = async () => {
+    try {
+      await registerWithEmail(email, password);
+      onClose();
+    } catch (err) {
+      // Error is caught and set in the store
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -62,20 +89,13 @@ export default function AuthModal({ isOpen, onClose }) {
         {error && <p className="text-red-500 text-sm mb-4 text-center">{error}</p>}
         
         <div className="space-y-4">
+          {/*
           <button 
             onClick={() => handleLogin('google')}
             className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors font-medium shadow-sm"
           >
             <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
             Continue with Google
-          </button>
-          
-          <button 
-            onClick={() => handleLogin('linkedin')}
-            className="w-full flex items-center justify-center gap-3 bg-[#0A66C2] text-white px-4 py-2 rounded-md hover:bg-[#004182] transition-colors font-medium shadow-sm"
-          >
-            <img src="https://www.svgrepo.com/show/448234/linkedin.svg" alt="LinkedIn" className="w-5 h-5 filter invert" />
-            Continue with LinkedIn
           </button>
 
           <div className="relative flex py-2 items-center">
@@ -118,6 +138,38 @@ export default function AuthModal({ isOpen, onClose }) {
             </div>
           )}
           <div id="recaptcha-container"></div>
+          */}
+
+          <div className="space-y-3">
+            <input 
+              type="email" 
+              placeholder="Email address" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <input 
+              type="password" 
+              placeholder="Password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            />
+            <div className="flex gap-3 pt-2">
+              <button 
+                onClick={handleEmailLogin}
+                className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors font-medium"
+              >
+                Sign In
+              </button>
+              <button 
+                onClick={handleEmailRegister}
+                className="flex-1 bg-white border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-50 transition-colors font-medium"
+              >
+                Register
+              </button>
+            </div>
+          </div>
         </div>
         <p className="mt-6 text-xs text-center text-gray-500">
           By continuing, you agree to our Terms of Service and Privacy Policy.

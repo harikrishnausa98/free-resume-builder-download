@@ -75,13 +75,13 @@ A strict, step-by-step development roadmap focusing on feature rollout, tech sta
   * [ ] Add drag-and-drop reordering for Work Experience and Education arrays.
 
 ## Phase 10: User Authentication & Cloud Storage (✅ Completed)
-* **Focus:** Transition to a cloud-synced platform.
+* **Focus:** Transition from a `localStorage`-only app to a full-stack platform with a custom backend.
 * **Action Items:**
-  * [x] **Authentication:** Implement Firebase Authentication supporting Email/Password, Google (Gmail) OAuth, LinkedIn OAuth, and Phone Number login.
-  * [x] **Database Design:** Structure Firestore documents to cleanly store user profiles and their resume data.
-  * [x] **Cloud Sync:** Create a sync mechanism between the local Zustand store and Firestore (e.g., auto-save to cloud when authenticated, fetch on login).
-  * [x] **Security Rules:** Write strict Firebase Security Rules to ensure users can only read, update, and delete their own documents.
-  * [x] **Data Privacy & Security:** Ensure PII is handled securely and maintain strict XSS sanitization (via DOMPurify) for all cloud-retrieved data.
+  * [x] **Backend API:** Implement a Node.js/Express backend with endpoints for user registration and login (`/api/auth/register`, `/api/auth/login`).
+  * [x] **Authentication:** Implement email/password authentication using `bcrypt` for password hashing and `jsonwebtoken` (JWT) for issuing access tokens.
+  * [x] **Frontend Integration:** Refactor the frontend `AuthModal` and `useAuthStore` to communicate with the custom backend API instead of Firebase.
+  * [x] **Resume Data API:** Add protected endpoints (`/api/resume`) for saving and fetching a user's resume data.
+  * [x] **Cloud Sync:** Create a sync mechanism between the local Zustand store and the custom backend (auto-save to cloud when authenticated, fetch on login).
 
 ## Phase 11: Cover Letter Builder (⏳ Planning)
 * **Focus:** Expand the application to generate theme-matching cover letters.
